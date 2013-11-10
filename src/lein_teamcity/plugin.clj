@@ -76,7 +76,7 @@
                      (println (str "##teamcity[testSuiteFinished name='" (ns-name (:ns m#)) "']")))
 
                    (when (= (:type m#) :begin-test-var)
-                     (println (str "##teamcity[testStarted name='" (test-name#)  "']"))
+                     (println (str "##teamcity[testStarted name='" (test-name#)  "' captureStandardOutput='true']"))
                      ((.getRawRoot #'clojure.test/report) m#))
 
                    (when (= (:type m#) :end-test-var)

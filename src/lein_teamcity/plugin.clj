@@ -85,7 +85,13 @@
 
                    (when (= (:type m#) :fail)
                      ((.getRawRoot #'clojure.test/report) m#)
-                     (println (str "##teamcity[testFailed name='" (test-name#) "' message='" (escape# (fail-msg# m#)) "']")))))]
+                     (println (str "##teamcity[testFailed name='" (test-name#) "' message='" (escape# (fail-msg# m#)) "']")))
+
+                   (when (= (:type m#) :error)
+                     ((.getRawRoot #'clojure.test/report) m#)
+                     (println (str "##teamcity[testFailed name='" (test-name#) "' message='" (escape# (fail-msg# m#)) "']")))
+
+                   ))]
        ~(apply f args))
     (apply f args)))
 

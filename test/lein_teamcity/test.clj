@@ -49,3 +49,8 @@
             "##teamcity[testFailed name='an-erroring-test' message=':message Uncaught exception, not in assertion.|n:expected |n:actual java.lang.Exception: ERROR']"
             "##teamcity[testFinished name='an-erroring-test']"
             "##teamcity[testSuiteFinished name='one-error.core-test']"]))))
+
+(deftest do-not-report-syntax-error
+  (let [{:keys [exit out]} (lein-test "./test-projects/syntax-error")]
+    (is (= 1 exit))
+    (is (= (teamcity-test-messages out) nil))))

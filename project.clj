@@ -1,4 +1,4 @@
-(defproject lein-teamcity "0.2.1"
+(defproject lein-teamcity "0.2.2"
   :description "Leiningen TeamCity integration"
   :url "http://github.com/nd/lein-teamcity"
   :license {:name "Eclipse Public License"

@@ -9,7 +9,7 @@ create a template at `~/.lein/profiles.d/teamcity.clj` with the
 following content:
 
     {
-      :plugins [[lein-teamcity "0.2.1"]]
+      :plugins [[lein-teamcity "0.2.2"]]
       :monkeypatch-clojure-test false
     }
 

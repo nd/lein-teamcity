@@ -54,3 +54,9 @@
   (let [{:keys [exit out]} (lein-test "./test-projects/syntax-error")]
     (is (= 1 exit))
     (is (= (teamcity-test-messages out) nil))))
+
+
+(deftest do-not-report-syntax-error-in-test
+  (let [{:keys [exit out]} (lein-test "./test-projects/syntax-error-test")]
+    (is (= 1 exit))
+    (is (= (teamcity-test-messages out) nil))))
